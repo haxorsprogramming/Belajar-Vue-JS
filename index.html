@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Belajar VUE Js</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ nama }} <br/> {{alamat}}
+    </div>
+    <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }} - {{ todo.nama}}
+          </li>
+        </ol>
+      </div>
+      <div id="app-5">
+          <p>{{pesan}}</p><span>{{hitung}}</span>
+          <button v-on:click="tampilPesan">Klik</button>
+      </div>
+    <script src='script.js'></script>
+</body>
+
+</html>
