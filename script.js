@@ -17,6 +17,16 @@ var app4 = new Vue({
     }
   });
 
+function tesApi(){
+    var request = new XMLHttpRequest();
+    request.open('GET','http://api.haxors.or.id/riyan/get_data_kerusakan.php', true);
+    request.onload = function(){
+        let obj = JSON.parse(this.response);
+        console.log(obj);
+    }
+    request.send();
+}
+
 var app5 = new Vue({
     el : '#app-5',
     data : {
@@ -25,9 +35,7 @@ var app5 = new Vue({
     },
     methods : {
         tampilPesan : function (){
-            window.alert("Hay");
-            this.pesan = "Aditia";
-            this.hitung += 1;
+            tesApi();
         }
     }
 });
