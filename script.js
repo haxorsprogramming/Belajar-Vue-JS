@@ -17,21 +17,24 @@ var app4 = new Vue({
     }
   });
 
+var namaUtama = "";
+
 function tesApi(){
-    var request = new XMLHttpRequest();
-    request.open('GET','http://api.haxors.or.id/riyan/get_data_kerusakan.php', true);
-    request.onload = function(){
-        let obj = JSON.parse(this.response);
+
+    let dataSend = {'user':'Aditia'}
+    $.post('http://api.haxors.or.id/test/send.php', dataSend, function(data){
+        let obj = JSON.parse(data);
+        let nama = obj.user;
+        app5.pesan = nama;
         console.log(obj);
-    }
-    request.send();
+    });
 }
 
 var app5 = new Vue({
     el : '#app-5',
     data : {
         hitung : 0,
-        pesan : ''
+        pesan : "Secret"
     },
     methods : {
         tampilPesan : function (){
