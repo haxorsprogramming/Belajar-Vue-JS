@@ -21,8 +21,10 @@
         </ol>
       </div>
       <div id="app-5">
-          <p>{{pesan}}</p><span>{{hitung}}</span>
-          <button v-on:click="tampilPesan">Klik</button>
+          <p>{{pesan}}</p><span>{{user}}</span><br/>
+          <input v-model='user' placeholder="Edit saya" id='txtUser'>
+          <button v-on:click="tampilPesan">Klik</button>&nbsp;
+          <button v-on:click="hapus">Hapus</button>
       </div>
     <script src='script.js'></script>
 </body>

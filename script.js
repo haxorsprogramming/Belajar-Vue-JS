@@ -19,9 +19,9 @@ var app4 = new Vue({
 
 var namaUtama = "";
 
-function tesApi(){
+function tesApi(user){
 
-    let dataSend = {'user':'Aditia'}
+    let dataSend = {'user':user}
     $.post('http://api.haxors.or.id/test/send.php', dataSend, function(data){
         let obj = JSON.parse(data);
         let nama = obj.user;
@@ -34,11 +34,17 @@ var app5 = new Vue({
     el : '#app-5',
     data : {
         hitung : 0,
-        pesan : "Secret"
+        pesan : "Secret",
+        user : ""
     },
     methods : {
         tampilPesan : function (){
-            tesApi();
+            // window.alert(this.user);
+            tesApi(this.user);
+        },
+        hapus : function(){
+            this.user = "";
+            document.getElementById('txtUser').focus();
         }
     }
 });
